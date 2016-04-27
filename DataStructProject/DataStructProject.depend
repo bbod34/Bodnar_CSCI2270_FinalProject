@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1461531758 source:/home/user/DataStruct/DataStructProject/main.cpp
+	<iostream>
+	"HangMan.h"
+
+1461531582 /home/user/DataStruct/DataStructProject/include/HangMan.h
+	<iostream>
+
+1461531582 source:/home/user/DataStruct/DataStructProject/src/HangMan.cpp
+	"HangMan.h"
+	<iostream>
+
