@@ -30,6 +30,7 @@ class HangMan
         void addStrike();
         void showEndingWord();
         void resetStrikes();
+        void displayTextMan(int strikesCount);  // text depiction of hangman
 
 
 

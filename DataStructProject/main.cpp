@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdlib.h> //atoi
 #include "HangMan.h"
 
 using namespace std;
@@ -17,10 +18,19 @@ int main()
         cout << "3. Quit" << endl;
         cin>>choice;
             if(choice == "1"){
-                int random;
+                string random; //storing as string and allows to converting to int via atoi
                 cout<<"Enter a number between 1 and 9"<<endl;
                 cin>>random;
-                string word = floop.randomWord(random);
+                int randomInt;
+                randomInt=atoi(random.c_str());//converts to integer, so other chars don't cause seg faults or infinite loops
+                while (randomInt<1 || randomInt>9)
+                {
+                    cin.clear();
+                    cout<<"Enter a number between 1 and 9"<<endl;
+                    cin>>random;
+                    randomInt=atoi(random.c_str());
+                }
+                string word = floop.randomWord(randomInt);
                 floop.initializeLinkedList(word);
                 string letter;
                 while(floop.wordSolved() == false && floop.strikesCheck() == false){
@@ -42,6 +52,7 @@ int main()
                 cout<<"Congrats! You guessed the word!"<<endl;
                 }
                 else{
+                    floop.displayTextMan(7);
                     cout<<"You lose. Better luck next time!"<<endl;
                 }
                 cout<<endl;
