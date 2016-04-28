@@ -137,9 +137,21 @@ void HangMan::showEndingWord(){
     }
 }
 
+void HangMan::displayTextMan(int strikes)
+{
+                    cout<<" ____"<<endl;
+                    cout<<" |  |"<<endl;
+    if (strikes<1)  cout<<" |  "<<endl;  else cout<<" |  O"<<endl;
+    if (strikes<2)  cout<<" |  "<<endl;  else if (strikes < 3) cout<<" | /"<<endl;  else if (strikes < 4) cout<<" | /|"<<endl; else cout<<" | /|"<<"\\ "<<endl;
+    if (strikes<5)  cout<<" |  "<<endl;  else cout<<" |  |"<<endl;
+    if (strikes<6)  cout<<" |  "<<endl;  else if (strikes<7) cout<<" | /"<<endl; else cout<<" | / \\ "<<endl;
+    if (strikes<7)  cout<<" |  "<<endl;
+                    cout<<"_/\\_ "<<endl;
+}
 
 void HangMan::showStrikes(){
     cout<<"Strikes: "<<strikes<<endl;
+    displayTextMan(strikes);
 }
 
 void HangMan::resetStrikes(){
