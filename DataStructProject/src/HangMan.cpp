@@ -32,7 +32,8 @@ void HangMan::initializeWordArray(){
 
 
 string HangMan::randomWord(int number){  ///choose word in array of numbers
-    string word = wordArray[number-1];
+    int randNum = rand() % number; //get a random integer between 0 and the number entered
+    string word = wordArray[randNum];
     return word;
 }
 
